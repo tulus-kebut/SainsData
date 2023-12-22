@@ -7,10 +7,12 @@ use App\Models\Posyandu;
 use App\Models\Stunting;
 use Illuminate\Http\Request;
 use App\Exports\EmployedExport;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 
 class PosyanduController extends Controller
 {
+    // FUNGSI TAMPIL DATA
     public function index(Request $request)
     {
         $title = 'Data stunting';
@@ -28,6 +30,7 @@ class PosyanduController extends Controller
 
     }
 
+    // FUNGSI HALAMAN TAMBAH DATA 
     public function create()
     {
         $title = 'Tambah Data';
@@ -38,6 +41,7 @@ class PosyanduController extends Controller
         return view('admin.posyandu.create', compact('title', 'posyandu', 'dusun'));
     }
 
+    // FUNGSI PROSES TAMBAH DATA
     public function store(Request $request)
     {
         $request->validate([
@@ -65,6 +69,7 @@ class PosyanduController extends Controller
         return redirect()->route('posyandu')->with('success', 'Data Stunting berhasil ditambah');
     }
 
+    // FUNGSI HALAMAN EDIT DATA
     public function edit($id)
     {
         $title = 'Edit Data';
@@ -76,6 +81,7 @@ class PosyanduController extends Controller
         return view('admin.posyandu.edit', compact('title', 'datas', 'posyandu', 'dusun'));
     }
 
+    // FUNGSI PROSES EDIT DATA
     public function update(Request $request, string $id) 
     {
         $stunting = Stunting::findOrFail($id);
@@ -105,6 +111,7 @@ class PosyanduController extends Controller
         return redirect()->route('posyandu')->with('success', 'Data Stunting berhasil diubah');
     }
 
+    // FUNGSI HAPUS DATA
     public function destroy($id)
     {
         $datas = Stunting::findOrFail($id);
@@ -112,6 +119,8 @@ class PosyanduController extends Controller
         $datas->destroy($id);
         return redirect()->route('posyandu');
     }
+
+    // FUNGSI EXPORT DATA MENJADI EXCEL (xlsx)
     public function export(){
         return excel::download(new EmployedExport , 'dataposyandu.xlsx');
     }

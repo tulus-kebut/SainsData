@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\posyandu;
+use App\Models\stunting;
 use Maatwebsite\Excel\Concerns\FromCollection;
 
 class EmployedExport implements FromCollection
@@ -12,6 +12,6 @@ class EmployedExport implements FromCollection
     */
     public function collection()
     {
-        return posyandu::all();
+        return stunting::all();
     }
 }
