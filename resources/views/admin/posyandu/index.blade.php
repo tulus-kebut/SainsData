@@ -28,12 +28,12 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <a href="{{ route('posyandu.create') }}" class="btn btn-fill btn-primary">Add data +</a>
-                            <a href="{{ route('posyandu.export') }}" class="btn btn-fill btn-primary">export excel</a>
+                            <a href="{{ route('posyandu.export') }}" class="btn btn-fill btn-primary"><i class="tim-icons icon-cloud-download-93"></i> export excel</a>
                         </div>
                         <div class="col-md-6">
                             <form class="d-flex" action="{{ route('posyandu') }}" method="GET">
                                 @csrf
-                                <input class="form-control me-2 mx-2 mt-1" type="search" placeholder="Search: Nama/Dusun/Nama Ibu ..." id="search" name="search" aria-label="Search">
+                                <input class="form-control me-2 mx-2 mt-1" type="search" placeholder="Search: Nama/Dusun/Nama Ibu ..." id="search" name="search" aria-label="Search" value="{{ request('search') }}" autofocus>
                                 <button class="btn btn-outline-success" type="submit"><i
                                     class="tim-icons icon-zoom-split"></i>
                             </button>
@@ -56,6 +56,7 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
+                                        @if(count($datas) > 0)
                                         <table class="table table-hover" id="">
                                             <thead class=" text-primary">
                                                 <tr>
@@ -130,6 +131,9 @@
                                                 @endforeach
                                             </tbody>
                                         </table>
+                                        @else
+                                        <p class="text-center mx-auto">Data Kosong !!!</p>
+                                    @endif
                                         <div class="modal fade " id="exampleModal" tabindex="-1" role="dialog"
                                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                                             <div class="modal-dialog" role="document">
