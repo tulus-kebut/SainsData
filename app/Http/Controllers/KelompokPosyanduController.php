@@ -28,7 +28,7 @@ class KelompokPosyanduController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kode_posyandu' => 'required|regex:/^PYD\d{6}$/',
+            'kode_posyandu' => 'required|regex:/^PYD\d{4}$/',
             'nama_posyandu' => 'required|string|max:50'
         ]);
 
@@ -43,6 +43,6 @@ class KelompokPosyanduController extends Controller
     // HALAMAN EDIT DATA KELOMPOK POSYANDU
     public function edit($id)
     {
-        
+
     }
 }
