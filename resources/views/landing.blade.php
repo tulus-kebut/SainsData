@@ -46,7 +46,7 @@
   <br> Selamat datang di aplikasi visualisasi data <span>Desa Pelat</span></h1>
   <h4 class="subtext">In development by Cupcake Projects</h4>
   <div class="btn-container">
-  <a href="https://github.com/JusmanEfendy/SainsData" class="github-btn"><i class="fa-brands fa-github"></i> Github</a>
+  <a href="https://github.com/tulus-kebut/SainsData" class="github-btn"><i class="fa-brands fa-github"></i> Github</a>
   </div>
 </div>
 <!-- Container Start -->
@@ -54,7 +54,7 @@
   <!-- About Section Start -->
   <section class="about" id="about">
     <h2>About Us</h2>
-    <p>Aplikasi ini dibuat untuk memenuhi tugas project matakuliah Sains Data</p>
+    <p>Website Ini Dibuat Untuk Memenuhi Ujian Akhir Kelompok 5</p>
   </section>
   <!-- About Section End -->
 
@@ -63,7 +63,7 @@
     <h2>Meet Our Team</h2>
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
-      <h3>Wulandari</h3>
+      <h3>Lalu Tulus Dwi Sapte</h3>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
     </div>
     <div class="team-member">
@@ -73,12 +73,12 @@
     </div>
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
-      <h3>M. Alif Aldiansyah</h3>
+      <h3>Baiq Ale Mardianti</h3>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
     </div>
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
-      <h3>Sulastri</h3>
+      <h3>Luqiandini</h3>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
     </div>
     <div class="team-member">
