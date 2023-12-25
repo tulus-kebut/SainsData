@@ -16,6 +16,12 @@
                     <p>Dashboard</p>
                 </a>
             </li>
+            <li class="{{ request()->is('kelompok-posyandu*') ? 'active' : '' }} ">
+                <a href="{{ route('kelompok-posyandu') }}">
+                    <i class="tim-icons icon-molecule-40"></i>
+                    <p>Kelompok Posyandu</p>
+                </a>
+            </li>
             <li class="{{ request()->is('posyandu*') ? 'active' : '' }} ">
                 <a href="{{ route('posyandu') }}">
                     <i class="tim-icons icon-notes"></i>
