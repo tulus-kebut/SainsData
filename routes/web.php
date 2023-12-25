@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KelompokPosyanduController;
 use App\Http\Controllers\PosyanduController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +41,11 @@ Route::middleware('auth')->group(function () {
     Route::patch('/posyandu/edit/{id}', [PosyanduController::class, 'update'])->name('posyandu.update');
     Route::delete('/posyandu/delete/{id}', [PosyanduController::class, 'destroy'])->name('posyandu.delete');
     Route::get('/export', [PosyanduController::class, 'export'])->name('posyandu.export');
+
+    // KELOMPOK POSYANDU
+    Route::get('/kelompok-posyandu', [KelompokPosyanduController::class, 'index'])->name('kelompok-posyandu');
+    Route::get('/kelompok-posyandu/create', [KelompokPosyanduController::class, 'create'])->name('kelompok-posyandu.create');
+    Route::post('/kelompok-posyandu/create', [KelompokPosyanduController::class, 'store'])->name('kelompok-posyandu.create');
 });
 
 require __DIR__.'/auth.php';
