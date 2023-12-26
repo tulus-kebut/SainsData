@@ -78,12 +78,7 @@
     </div>
     <div class="team-member">
       <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
-      <h3>Luqiandini</h3>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
-    </div>
-    <div class="team-member">
-      <img src="https://dummyimage.com/100x100/000/fff&text=Placeholder" alt="Team Member 1">
-      <h3>Andini Wulandari</h3>
+      <h3>Luqyandini</h3>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quod tempora eos, earum facere cum veniam odit rem eum, quidem ab autem tenetur unde fugiat alias cupiditate nostrum rerum placeat.</p>
     </div>
     <!-- Add more team members as needed -->

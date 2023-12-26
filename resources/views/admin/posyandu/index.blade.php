@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <a href="{{ route('posyandu.create') }}" class="btn btn-fill btn-primary">Add data +</a>
-                            <a href="{{ route('posyandu.export') }}" class="btn btn-fill btn-primary"><i class="tim-icons icon-cloud-download-93"></i> export excel</a>
+                            <a href="{{ route('posyandu.export') }}" class="btn btn-fill btn-info"><i class="tim-icons icon-cloud-download-93"></i> Excel</a>
                         </div>
                         <div class="col-md-6">
                             <form class="d-flex" action="{{ route('posyandu') }}" method="GET">

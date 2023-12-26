@@ -8,7 +8,7 @@
 
         <div class="main-panel">
             <!-- Navbar -->
-            @include('layouts.navbar', ['navbarBrand' => 'Posyandu'])
+            @include('layouts.navbar', ['navbarBrand' => 'Kelompok Posyandu'])
             <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
                 aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -79,21 +79,24 @@
                                                         <td class="text-center py-2">
                                                             <button data-target="#exampleModal" type="submit"
                                                                 data-toggle="modal"
+                                                                data-kode_posyandu="{{ $data->kode_posyandu }}"
+                                                                data-nama_posyandu="{{ $data->nama_posyandu }}"
+                                                                data-created="{{ $data->created_at }}"
                                                                 class="btn btn-icon btn-round btnStunting">
                                                                 <i class="tim-icons icon-alert-circle-exc"></i>
                                                             </button>
                                                             <button
-                                                                onclick="window.location.href='{{ route('posyandu.edit', $data->id) }}'"
+                                                                onclick="window.location.href='{{ route('kelompok-posyandu.edit', $data->kode_posyandu) }}'"
                                                                 class="btn btn-icon btn-round">
                                                                 <i class="tim-icons icon-pencil"></i>
                                                             </button>
                                                             <form class="d-inline"
-                                                                action="{{ route('posyandu.delete', $data->id) }}"
+                                                                action="{{ route('kelompok-posyandu.delete', $data->kode_posyandu) }}"
                                                                 method="post">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit"
-                                                                    class="btn btn-icon btn-round delete" data-nama="{{ $data->nama }}">
+                                                                    class="btn btn-icon btn-round delete" data-nama="{{ $data->nama_posyandu }}">
                                                                     <i class="tim-icons icon-trash-simple"></i>
                                                                 </button>
                                                             </form>
@@ -110,8 +113,7 @@
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                        <h4 class="modal-title" id="exampleModalLabel">Detail balita
-                                                            stunting Desa Pelat</h4>
+                                                        <h4 class="modal-title" id="exampleModalLabel">Detail Kelompok Posyandu</h4>
                                                         <button type="button" class="close" data-dismiss="modal"
                                                             aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
@@ -135,7 +137,7 @@
                                                             <div class="col-6">
                                                                 <b>Ditambahkan Pada:</b>
                                                             </div>
-                                                            <div class="col-6" id="namaPosyandu"></div>
+                                                            <div class="col-6" id="created"></div>
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
@@ -207,7 +209,7 @@
     <!--   Core JS Files   -->
     @include('layouts.script')
 
-    {{-- <script>
+    <script>
         $(".delete").on("click", function(e) {
             e.preventDefault()
             
@@ -242,21 +244,13 @@
         $(".btnStunting").on("click", function(e) {
             e.preventDefault()
 
-            $('#namaBalita').text($(this).data('nama'))
+            $('#kodePosyandu').text($(this).data('kode_posyandu'))
 
-            $('#namaOrtu').text($(this).data('nama_ortu'))
+            $('#namaPosyandu').text($(this).data('nama_posyandu'))
 
-            $('#posyandu').text($(this).data('posyandu'))
-
-            $('#dusun').text($(this).data('dusun'))
-
-            $('#tanggalLahir').text($(this).data('tanggal_lahir'))
-
-            $('#jenisKelamin').text($(this).data('kelamin'))
-
-            $('#usiaUkur').text($(this).data('usia_ukur'))
+            $('#created').text($(this).data('created'))
         })
-    </script> --}}
+    </script>
 </body>
 
 </html>

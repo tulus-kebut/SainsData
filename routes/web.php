@@ -46,6 +46,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/kelompok-posyandu', [KelompokPosyanduController::class, 'index'])->name('kelompok-posyandu');
     Route::get('/kelompok-posyandu/create', [KelompokPosyanduController::class, 'create'])->name('kelompok-posyandu.create');
     Route::post('/kelompok-posyandu/create', [KelompokPosyanduController::class, 'store'])->name('kelompok-posyandu.create');
+    Route::get('/kelompok-posyandu/{id}/edit', [KelompokPosyanduController::class, 'edit'])->name('kelompok-posyandu.edit');
+    Route::patch('/kelompok-posyandu/{id}/edit', [KelompokPosyanduController::class, 'update'])->name('kelompok-posyandu.update');
+    Route::delete('/kelompok-posyandu/{id}/delete', [KelompokPosyanduController::class, 'destroy'])->name('kelompok-posyandu.delete');
 });
 
 require __DIR__.'/auth.php';
