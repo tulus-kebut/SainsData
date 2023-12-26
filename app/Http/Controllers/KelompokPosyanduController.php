@@ -41,8 +41,37 @@ class KelompokPosyanduController extends Controller
     }
 
     // HALAMAN EDIT DATA KELOMPOK POSYANDU
-    public function edit($id)
+    public function edit($kode)
     {
+        $title = 'Edit Data Kelompok Posyandu';
 
+        $datas = Posyandu::where('kode_posyandu', $kode)->first();
+        return view('admin.kelompok-posyandu.edit', compact('title', 'datas'));
+    }
+
+    // PROSES EDIT DATA KELOMPOK POSYANDU
+    public function update(Request $request, string $kode)
+    {
+        $posyandu = Posyandu::where('kode_posyandu', $kode)->first();
+
+        $request->validate([
+            'kode_posyandu' => 'required|regex:/^PYD\d{4}$/',
+            'nama_posyandu' => 'required|string|max:50'
+        ]);
+
+        $posyandu->update([
+            'kode_posyandu' => $request->kode_posyandu,
+            'nama_posyandu' => $request->nama_posyandu
+        ]);
+
+        return redirect()->route('kelompok-posyandu')->with('success', 'Data Stunting berhasil diubah');
+    }
+
+    // PROSES HAPUS DATA KELOMPOK POSYANDU
+    public function destroy($kode)
+    {
+        Posyandu::where('kode_posyandu', $kode)->delete();
+
+        return redirect()->route('kelompok-posyandu');
     }
 }

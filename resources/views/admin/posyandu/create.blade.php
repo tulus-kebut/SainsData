@@ -62,14 +62,14 @@
                                         <div class="row">
                                             <div class="col-md-5 pr-md-1">
                                                 <div class="form-group">
-                                                    <label for="desa">Desa (disabled)</label>
+                                                    <label for="desa">Desa (automatic)</label>
                                                     <input type="text" name="desa" id="desa"
                                                         class="form-control" disabled="" value="Desa Pelat">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 px-md-1">
                                                 <div class="form-group">
-                                                    <label for="kode_posyandu">posyandu</label>
+                                                    <label for="kode_posyandu">Kelompok Posyandu</label>
                                                     <select name="kode_posyandu" class="form-control">
                                                         <option selected disabled>Pilih Kelompok Posyandu</option>
                                                         @if (isset($posyandu))

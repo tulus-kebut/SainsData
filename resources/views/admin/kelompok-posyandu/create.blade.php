@@ -8,7 +8,7 @@
 
         <div class="main-panel">
             <!-- Navbar -->
-            @include('layouts.navbar', ['navbarBrand' => 'Posyandu'])
+            @include('layouts.navbar', ['navbarBrand' => 'Kelompok Posyandu'])
 
             <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
                 aria-hidden="true">

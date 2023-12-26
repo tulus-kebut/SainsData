@@ -121,7 +121,8 @@ class PosyanduController extends Controller
     }
 
     // FUNGSI EXPORT DATA MENJADI EXCEL (xlsx)
-    public function export(){
+    public function export()
+    {
         return excel::download(new EmployedExport , 'dataposyandu.xlsx');
     }
 }
