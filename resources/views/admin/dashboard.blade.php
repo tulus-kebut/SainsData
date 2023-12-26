@@ -1,5 +1,6 @@
 @include('layouts.header')
 <title>{{ $title }}</title>
+
 <body class="">
     <div class="wrapper">
 
@@ -9,13 +10,12 @@
             <!-- Navbar -->
             @include('layouts.navbar')
 
-            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog"
-                aria-labelledby="searchModal" aria-hidden="true">
+            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal"
+                aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <input type="text" class="form-control" id="inlineFormInputGroup"
-                                placeholder="SEARCH">
+                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <i class="tim-icons icon-simple-remove"></i>
                             </button>
@@ -38,7 +38,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
-                                         <div class="">
+                                    <div class="">
                                         {!! $pasienBulananChart->container() !!}
                                     </div>
                                 </div>
@@ -55,9 +55,7 @@
                                 </h3>
                             </div>
                             <div class="card-body">
-                                <div class="chart-area">
-
-                                </div>
+                                {!! $genderChart->container() !!}
                             </div>
                         </div>
                     </div>
@@ -65,14 +63,12 @@
                         <div class="card card-chart">
                             <div class="card-header">
                                 <h5 class="card-category">Kelompok Posyandu</h5>
-                                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i> {{ $kelompokPosyandu->count() }} Kelompok </h3>
+                                <h3 class="card-title"><i class="tim-icons icon-delivery-fast text-info"></i>
+                                    {{ $kelompokPosyandu->count() }} Kelompok </h3>
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
-                                    <div class="">
-                                        {!! $posyanduChart->container() !!}
-                                    </div>
-
+                                    {!! $posyanduChart->container() !!}
                                 </div>
                             </div>
                         </div>
@@ -148,9 +144,11 @@
 
     <script src="{{ $posyanduChart->cdn() }}"></script>
     <script src="{{ $pasienBulananChart->cdn() }}"></script>
+    <script src="{{ $genderChart->cdn() }}"></script>
 
     {{ $posyanduChart->script() }}
     {{ $pasienBulananChart->script() }}
+    {{ $genderChart->script() }}
 </body>
 
 </html>
