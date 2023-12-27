@@ -55,7 +55,7 @@ class KelompokPosyanduController extends Controller
         $posyandu = Posyandu::where('kode_posyandu', $kode)->first();
 
         $request->validate([
-            'kode_posyandu' => 'required|regex:/^PYD\d{4}$/',
+            'kode_posyandu' => 'required|max:8',
             'nama_posyandu' => 'required|string|max:50'
         ]);
 
